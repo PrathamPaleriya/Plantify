@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login In</title>
+    <link rel="stylesheet" href="home-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/496f002ed5.js" crossorigin="anonymous"></script>
+    <style>
+      body::before {
+          display: none;
+      }
+    </style>
+</head>
+<body>
+    
+    <!-- header -->
+    <div class="nav-header">
+        <div class="nav-links">
+            <a href="index.html" >Home</a>
+            <a href="#1">Help</a>
+            <a href="#2">Track Order</a>
+            <a href="#3">Order</a>
+            <a href="#4">Wishlist</a>
+            <a href="#5">Offers</a>
+            <a href="#6">Corprate</a>
+        </div>
+    </div>
+
+    
+
+    <!-- Login Area -->
+    <form action="">
+    <div class="login-card">
+        <h1>Log-In to Plantify</h1>
+        <p style="font-size: 12.8px; color: var(--green);">Nurturing Green Dreams</p>
+
+        
+        <div class="login-section">
+            <p>Name</p>
+            <input type="text" id="user-name" placeholder="Full Name" required>
+        </div>
+
+        <div class="login-section">
+            <p>Email Address</p>
+            <input type="email" id="email-id" placeholder="abc@gmail.com" required>
+        </div>
+        
+        <div class="login-section">
+            <p>Password</p>
+            <input type="password" id="password" id="password" placeholder="Enter Password" required>
+            <img src="assets/icons/password-view.png" id="password-view" alt="visual" style="height: 20px; position: absolute;">
+        </div>
+
+        <div class="tnc">
+            <div id="tnc" class="unchecked"></div> 
+            <a href="#tnc" id="tnclink">I agree to the Terms of Service and Privacy Policy.</a>
+        </div>
+          
+        <button id="login" type="submit">Login</button>
+
+        <a href="#sign-in" id="signin">New customer? <b>Create New Account</b></a>
+        <button onclick="window.location.href = 'index.html'" class="back-btn" style="position:  relative; left: -180px;">Back</button>
+
+        <div class="login-ways" style="align-content: center;">
+            <a href=""><img src="assets/icons/google.png" alt=""></a>
+            <a href=""><img src="assets/icons/facebook.png" alt=""></a>
+            <a href=""><img src="assets/icons/apple.png" alt=""></a>
+        </div>
+    </div>
+    </form>
+    
+
+
+
+<script>
+    let passwordBox = document.getElementById("password");
+let passwordBtn = document.getElementById("password-view");
+let passVisible = false;
+passwordBtn.addEventListener("click", () => {
+  if (passVisible) {
+    passwordBox.type = "text";
+    passwordBtn.src = "assets/icons/password-hidden.png";
+    passVisible = false;
+  } else {
+    passwordBox.type = "password";
+    passwordBtn.src = "assets/icons/password-view.png";
+    passVisible = true;
+  }
+});
+
+// password
+let tncBtn = document.getElementById("tnc");
+let unchecked = true;
+tncBtn.style.cursor = "pointer";
+tncBtn.addEventListener("click", () => {
+  if (unchecked) {
+    tncBtn.classList.toggle("checked");
+    tncBtn.classList.remove("unchecked");
+    // tncBtn.classList.add("checked");
+    unchecked = false;
+  } else {
+    tncBtn.classList.toggle("unchecked");
+    tncBtn.classList.remove("checked");
+    unchecked = true;
+  }
+});
+
+let loginBtn = document.getElementById("login");
+let username = document.getElementById("user-name");
+let email = document.getElementById("email-id");
+loginBtn.addEventListener("click", () => {
+  if (unchecked) {
+    alert("Accept the Terms to proceed");
+  } else {
+    window.location.href = "index.html";
+  }
+});
+
+
+</script> 
+</body>
+</html>
+
+<!-- last git: 5/5/2024 -->
